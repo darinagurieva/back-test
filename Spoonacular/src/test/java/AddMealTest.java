@@ -1,3 +1,4 @@
+import lesson4.AbstractTest;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ public class AddMealTest extends AbstractTest {
                         + " }\n"
                         + "}")
                 .when()
-                .post("https://api.spoonacular.com/mealplanner/darinagurieva/items")
+                .post("https://api.spoonacular.com/mealplanner/darinagurieva0/items")
                 .then()
                 .statusCode(200)
                 .extract()
@@ -41,7 +42,7 @@ public class AddMealTest extends AbstractTest {
         given()
                 .queryParam("hash", getHash())
                 .queryParam("apiKey", getApiKey())
-                .delete("https://api.spoonacular.com/mealplanner/darinagurieva/items/" + id)
+                .delete("https://api.spoonacular.com/mealplanner/darinagurieva0/items/" + id)
                 .then()
                 .statusCode(200);
     }
